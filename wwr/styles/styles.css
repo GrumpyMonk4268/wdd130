@@ -1,0 +1,222 @@
+/* Fonts & brand variables (from your site plan) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --primary-color: #219EBC;    /* teal */
+  --secondary-color: #023047;  /* deep blue */
+  --accent1-color: #FFB703;    /* yellow */
+  --accent2-color: #FB8500;    /* orange */
+
+  --heading-font: "Montserrat", Arial, Helvetica, sans-serif;
+  --paragraph-font: "Lato", Helvetica, Arial, sans-serif;
+
+  --headline-color-on-white: #023047;
+  --headline-color-on-color: #FFFFFF;
+  --paragraph-color-on-white: #023047;
+  --paragraph-color-on-color: #FFFFFF;
+
+  --nav-link-color: #023047;
+  --nav-background-color: #FFB703;
+  --nav-hover-link-color: #FFFFFF;
+  --nav-hover-background-color: #219EBC;
+}
+
+/* ---- Page container (Rubric: content wrapper & width) ---- */
+#content {
+  max-width: 1600px;
+  margin: 0 auto;              /* center the whole page */
+}
+
+/* ---- Base ---- */
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f7fbfd;         /* subtle off-white for contrast */
+  color: var(--paragraph-color-on-white);
+  font-family: var(--paragraph-font);
+  line-height: 1.55;
+}
+
+/* ---- Header ---- */
+header {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding: .75rem 1rem;
+  background: rgba(2,48,71, .85);       /* secondary w/ transparency */
+  color: var(--headline-color-on-color);
+}
+
+.logo { width: 80px; }                    /* Rubric: 80px logo */
+
+/* ---- Nav ---- */
+nav {
+  display: flex;
+  justify-content: center;                /* Rubric: center links (not whole nav) */
+  gap: .75rem;
+}
+
+nav a {
+  display: inline-block;
+  padding: .6rem .9rem;
+  border-radius: .5rem;
+  text-decoration: none;                  /* Rubric: remove underline */
+  color: var(--nav-link-color);           /* foreground color */
+  background: var(--nav-background-color);/* background color */
+  font-weight: 700;
+}
+
+nav a:hover {
+  color: var(--nav-hover-link-color);     /* contrasting text */
+  background: var(--nav-hover-background-color);
+}
+
+/* ---- Hero ---- */
+#hero { position: relative; }
+
+#hero-img {
+  width: 100%;                            /* responsive hero */
+  display: block;
+}
+
+#hero-msg {
+  position: absolute;
+  inset: 10% 5% auto 5%;
+  text-align: center;                     /* Rubric: center headlines */
+  color: var(--headline-color-on-color);
+}
+
+.home-title {
+  font-family: var(--heading-font);
+  font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
+  margin: 0 0 .25rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,.35);
+}
+#hero-msg h4 {
+  margin: 0 0 1rem;
+  font-weight: 400;
+  text-shadow: 0 1px 4px rgba(0,0,0,.35);
+}
+
+/* Buttons (book/join) */
+.button-box { text-align: center; }       /* Rubric: center buttons */
+
+.book, .join {
+  display: inline-block;
+  padding: .7rem 1.1rem;
+  border-radius: .5rem;
+  text-decoration: none;                  /* Rubric: remove underline */
+  background: var(--accent2-color);      /* background color */
+  color: #fff;                            /* foreground color */
+  font-weight: 700;
+  transition: transform .15s ease, background .15s ease;
+}
+
+.book:hover, .join:hover {
+  background: var(--accent1-color);       /* hover bg */
+  color: #023047;                         /* hover text */
+  transform: translateY(-1px);
+}
+
+/* ---- Cards ---- */
+.home-grid {
+  display: grid;
+  gap: 2.5rem 1.5rem;
+  padding: 2rem 1rem;
+}
+
+main section { text-align: center; }      /* Rubric: center sections */
+
+.card-img {
+  width: min(100%, 480px);
+  border-radius: .5rem;
+  display: block;
+  margin: 0 auto .5rem;
+}
+
+.icon { width: 80px; }                    /* Rubric: 80px icons */
+
+h2 {
+  font-family: var(--heading-font);
+  margin: .5rem 0 0;
+  color: var(--headline-color-on-white);  /* foreground */
+}
+
+/* ---- Background band + Mountains + Message ---- */
+#background {
+  height: 725px;                          /* Rubric: height set */
+  background: #d9c2a3;                    /* warm band color (from example look) */
+  margin-top: 1rem;
+}
+
+.mountains {
+  width: 100%;
+  display: block;
+  margin: 0;
+}
+
+.msg {
+  margin: 0;
+  padding: 1.5rem 1rem 2.5rem;
+  background: var(--primary-color);       /* background color */
+  color: var(--paragraph-color-on-color); /* foreground color */
+  text-align: center;
+}
+
+.msg h2 {
+  margin: 0 0 .5rem;
+  color: var(--headline-color-on-color);  /* ensure contrast on color bg */
+}
+
+.msg p {
+  max-width: 70ch;
+  margin: 0 auto 1rem;
+}
+
+/* ---- Footer ---- */
+footer {
+  background: var(--secondary-color);     /* background color */
+  color: var(--headline-color-on-color);  /* foreground color */
+  text-align: center;                     /* centered section */
+  padding: 1.25rem 1rem 1.75rem;
+}
+
+footer p {
+  margin: .3rem 0;
+  font-size: 1.2em;                       /* Rubric: larger footer text */
+}
+
+footer a {
+  color: var(--accent1-color);            /* foreground color for links */
+  text-decoration: none;                  /* Rubric: remove underline */
+}
+
+footer a:hover {
+  color: #fff;
+  text-decoration: underline;             /* Rubric: underline on hover */
+}
+
+footer .social {
+  margin-top: .6rem;
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+}
+
+footer .social img { width: 32px; height: 32px; display: block; }
+
+/* ---- Small tweaks for narrower screens ---- */
+@media (max-width: 640px) {
+  header {
+    grid-template-columns: 80px 1fr;
+    gap: .5rem;
+  }
+  nav { flex-wrap: wrap; }
+  #hero-msg { inset: auto 5% 8% 5%; }
+}
