@@ -21,10 +21,10 @@
   --nav-hover-background-color: #219EBC;
 }
 
-/* ---- Page container (Rubric: content wrapper & width) ---- */
+/* ---- Page container ---- */
 #content {
   max-width: 1600px;
-  margin: 0 auto;              /* center the whole page */
+  margin: 0 auto; /* center the whole page */
 }
 
 /* ---- Base ---- */
@@ -36,9 +36,10 @@ html, body {
 }
 
 body {
-  background: #f7fbfd;         /* subtle off-white for contrast */
+  background: #f7fbfd; /* subtle off-white for contrast */
   color: var(--paragraph-color-on-white);
   font-family: var(--paragraph-font);
+  font-size: 22px;            /* W05: raise default font size */
   line-height: 1.55;
 }
 
@@ -49,31 +50,34 @@ header {
   align-items: center;
   gap: 1rem;
   padding: .75rem 1rem;
-  background: rgba(2,48,71, .85);       /* secondary w/ transparency */
+  background: rgba(2,48,71, .85);  /* secondary w/ transparency */
   color: var(--headline-color-on-color);
 }
 
-.logo { width: 80px; }                    /* Rubric: 80px logo */
+#logo_link { padding-top: 5px; }  /* W05: padding example */
+
+.logo { width: 80px; }            /* Rubric: 80px logo */
 
 /* ---- Nav ---- */
 nav {
   display: flex;
-  justify-content: center;                /* Rubric: center links (not whole nav) */
+  justify-content: center;        /* center links (not whole nav) */
   gap: .75rem;
+  text-align: center;             /* ensure link text centers */
 }
 
 nav a {
   display: inline-block;
-  padding: .6rem .9rem;
-  border-radius: .5rem;
-  text-decoration: none;                  /* Rubric: remove underline */
-  color: var(--nav-link-color);           /* foreground color */
-  background: var(--nav-background-color);/* background color */
+  padding: 12px 20px;             /* W05: padding example */
+  border-radius: 8px;
+  text-decoration: none;          /* remove underline */
+  color: var(--nav-link-color);   /* foreground color */
+  background: var(--nav-background-color); /* background color */
   font-weight: 700;
 }
 
 nav a:hover {
-  color: var(--nav-hover-link-color);     /* contrasting text */
+  color: var(--nav-hover-link-color);
   background: var(--nav-hover-background-color);
 }
 
@@ -81,23 +85,24 @@ nav a:hover {
 #hero { position: relative; }
 
 #hero-img {
-  width: 100%;                            /* responsive hero */
+  width: 100%;                    /* responsive hero */
   display: block;
 }
 
 #hero-msg {
   position: absolute;
   inset: 10% 5% auto 5%;
-  text-align: center;                     /* Rubric: center headlines */
+  text-align: center;             /* center headlines */
   color: var(--headline-color-on-color);
 }
 
 .home-title {
   font-family: var(--heading-font);
-  font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
-  margin: 0 0 .25rem;
+  font-size: 2em;                 /* W05: explicit 2em headline */
+  margin: 10px 0 6px;             /* W05: margin example */
   text-shadow: 0 2px 6px rgba(0,0,0,.35);
 }
+
 #hero-msg h4 {
   margin: 0 0 1rem;
   font-weight: 400;
@@ -105,22 +110,24 @@ nav a:hover {
 }
 
 /* Buttons (book/join) */
-.button-box { text-align: center; }       /* Rubric: center buttons */
+.button-box { text-align: center; } /* center buttons */
 
 .book, .join {
   display: inline-block;
-  padding: .7rem 1.1rem;
-  border-radius: .5rem;
-  text-decoration: none;                  /* Rubric: remove underline */
-  background: var(--accent2-color);      /* background color */
-  color: #fff;                            /* foreground color */
+  padding: 15px 30px;             /* W05: padding */
+  margin-top: 50px;               /* W05: margin */
+  border-radius: 5px;             /* W05: rounded corners */
+  text-decoration: none;          /* remove underline */
+  background: var(--accent2-color);
+  color: #fff;
   font-weight: 700;
+  font-size: 18px;                /* W05: explicit size */
   transition: transform .15s ease, background .15s ease;
 }
 
 .book:hover, .join:hover {
-  background: var(--accent1-color);       /* hover bg */
-  color: #023047;                         /* hover text */
+  background: var(--accent1-color);
+  color: #023047;
   transform: translateY(-1px);
 }
 
@@ -131,27 +138,37 @@ nav a:hover {
   padding: 2rem 1rem;
 }
 
-main section { text-align: center; }      /* Rubric: center sections */
+main section { text-align: center; } /* center sections */
 
 .card-img {
   width: min(100%, 480px);
-  border-radius: .5rem;
   display: block;
   margin: 0 auto .5rem;
+  border-radius: .5rem;
+  border: 10px solid #d9c2a3;     /* W05: border on section images */
 }
 
-.icon { width: 80px; }                    /* Rubric: 80px icons */
+main section img {
+  box-sizing: border-box;         /* W05: include border in size */
+}
+
+.icon { width: 80px; }            /* Rubric: 80px icons */
 
 h2 {
   font-family: var(--heading-font);
   margin: .5rem 0 0;
-  color: var(--headline-color-on-white);  /* foreground */
+  color: var(--headline-color-on-white);
 }
+
+/* Give the three cards generous vertical breathing room (W05: margin examples) */
+.rivers-card,
+.camping-card,
+.rapids-card { margin: 200px 0; }
 
 /* ---- Background band + Mountains + Message ---- */
 #background {
-  height: 725px;                          /* Rubric: height set */
-  background: #d9c2a3;                    /* warm band color (from example look) */
+  height: 725px;                   /* rubric: height set */
+  background: #d9c2a3;             /* warm band color (sample look) */
   margin-top: 1rem;
 }
 
@@ -163,43 +180,47 @@ h2 {
 
 .msg {
   margin: 0;
-  padding: 1.5rem 1rem 2.5rem;
-  background: var(--primary-color);       /* background color */
-  color: var(--paragraph-color-on-color); /* foreground color */
+  padding: 35px;                   /* W05: padding */
+  background: var(--primary-color);
+  color: var(--paragraph-color-on-color);
   text-align: center;
+  line-height: 1.5em;              /* W05: more line height */
 }
 
 .msg h2 {
   margin: 0 0 .5rem;
-  color: var(--headline-color-on-color);  /* ensure contrast on color bg */
+  color: var(--headline-color-on-color);
 }
 
 .msg p {
   max-width: 70ch;
   margin: 0 auto 1rem;
+  padding-bottom: 15px;            /* W05: padding-bottom */
+  font-size: .9em;                 /* slight reduction per W05 vibe */
 }
 
 /* ---- Footer ---- */
 footer {
-  background: var(--secondary-color);     /* background color */
-  color: var(--headline-color-on-color);  /* foreground color */
-  text-align: center;                     /* centered section */
-  padding: 1.25rem 1rem 1.75rem;
+  background: var(--secondary-color);
+  color: var(--headline-color-on-color);
+  text-align: center;
+  padding: 25px 50px;              /* W05: padding example */
+  margin-top: 200px;               /* W05: margin example */
 }
 
 footer p {
   margin: .3rem 0;
-  font-size: 1.2em;                       /* Rubric: larger footer text */
+  font-size: 1.2em;                /* larger footer text */
 }
 
 footer a {
-  color: var(--accent1-color);            /* foreground color for links */
-  text-decoration: none;                  /* Rubric: remove underline */
+  color: var(--accent1-color);
+  text-decoration: none;           /* remove underline */
 }
 
 footer a:hover {
   color: #fff;
-  text-decoration: underline;             /* Rubric: underline on hover */
+  text-decoration: underline;      /* underline on hover */
 }
 
 footer .social {
@@ -219,4 +240,7 @@ footer .social img { width: 32px; height: 32px; display: block; }
   }
   nav { flex-wrap: wrap; }
   #hero-msg { inset: auto 5% 8% 5%; }
+  .rivers-card,
+  .camping-card,
+  .rapids-card { margin: 120px 0; } /* slightly tighter on small screens */
 }
